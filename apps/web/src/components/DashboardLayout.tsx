@@ -210,7 +210,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
               <Link
                 key={item.name}
                 href={isGated && !token ? "/" : item.path}
-                onClick={(e) => {
+                onClick={(e: React.MouseEvent) => {
                   if (isGated && !token) {
                     e.preventDefault();
                     alert("Please login first to access this feature");
