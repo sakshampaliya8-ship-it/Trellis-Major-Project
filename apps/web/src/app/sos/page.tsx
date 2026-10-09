@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import DashboardLayout from "@/components/DashboardLayout";
 import { io, Socket } from "socket.io-client";
+import { BACKEND_URL } from "@/config/api";
 
 export type EmergencyType = "security" | "anti-ragging" | "medical" | "fire";
 
@@ -109,8 +110,6 @@ const COMMON_LOCATIONS = [
 ];
 
 export default function SOSPage() {
-  const BACKEND_URL = "http://localhost:5000";
-
   const [token, setToken] = useState<string | null>(null);
   const [userRole, setUserRole] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);

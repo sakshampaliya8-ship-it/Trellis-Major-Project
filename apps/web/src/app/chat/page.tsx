@@ -7,7 +7,7 @@ import { useSearchParams } from "next/navigation";
 
 import { Suspense } from "react";
 
-const BACKEND_URL = "http://localhost:5000";
+import { BACKEND_URL } from "@/config/api";
 
 function ChatContent() {
   const searchParams = useSearchParams();

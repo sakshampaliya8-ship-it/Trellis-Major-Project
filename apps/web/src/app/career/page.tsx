@@ -5,7 +5,7 @@ import DashboardLayout from "../../components/DashboardLayout";
 import Link from "next/link";
 import ResumeBuilder from "../../components/resume/ResumeBuilder";
 
-const BACKEND_URL = "http://localhost:5000";
+import { BACKEND_URL } from "@/config/api";
 
 export default function CareerPage() {
   const [token, setToken] = useState<string | null>(null);

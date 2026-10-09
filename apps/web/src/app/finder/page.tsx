@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import DashboardLayout from "@/components/DashboardLayout";
+import { BACKEND_URL } from "@/config/api";
 
 interface LocationItem {
   _id: string;
@@ -15,8 +16,6 @@ interface LocationItem {
 }
 
 export default function FinderPage() {
-  const BACKEND_URL = "http://localhost:5000";
-
   const [token, setToken] = useState<string | null>(null);
   const [locations, setLocations] = useState<LocationItem[]>([]);
 

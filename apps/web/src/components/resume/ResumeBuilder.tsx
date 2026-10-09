@@ -11,7 +11,7 @@ import AchievementsForm, { AchievementItem } from "./AchievementsForm";
 import TemplateSelector, { ResumeTemplateType } from "./TemplateSelector";
 import ResumePreview, { ResumeData } from "./ResumePreview";
 
-const BACKEND_URL = "http://localhost:5000";
+import { BACKEND_URL } from "@/config/api";
 
 const defaultResumeData: ResumeData = {
   personalInfo: {

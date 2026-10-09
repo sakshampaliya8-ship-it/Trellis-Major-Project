@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { useRouter } from "next/navigation";
 import DashboardLayout from "@/components/DashboardLayout";
+import { BACKEND_URL } from "@/config/api";
 
 interface SensorItem {
   _id: string;
@@ -43,7 +44,6 @@ interface SensorRequestItem {
 }
 
 export default function SensorsPage() {
-  const BACKEND_URL = "http://localhost:5000";
   const router = useRouter();
 
   const [token, setToken] = useState<string | null>(null);

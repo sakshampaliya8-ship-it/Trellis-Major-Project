@@ -3,10 +3,9 @@
 import React, { useState, useEffect } from "react";
 import DashboardLayout from "@/components/DashboardLayout";
 import { io } from "socket.io-client";
+import { BACKEND_URL } from "@/config/api";
 
 export default function PlacementsPage() {
-  const BACKEND_URL = "http://localhost:5000";
-
   const [token, setToken] = useState<string | null>(null);
   const [userRole, setUserRole] = useState<string | null>(null);
   const [userEmail, setUserEmail] = useState<string | null>(null);

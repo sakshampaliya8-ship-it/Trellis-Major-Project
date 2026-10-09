@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import { BACKEND_URL } from "@/config/api";
 
 interface DashboardLayoutProps {
   children: React.ReactNode;
@@ -66,7 +67,6 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
       setStudentSemester(initialSemester);
       setFacultyDepartment(initialDept);
 
-      const BACKEND_URL = "http://localhost:5000";
       fetch(`${BACKEND_URL}/api/auth/me`, {
         headers: { Authorization: `Bearer ${savedToken}` }
       })

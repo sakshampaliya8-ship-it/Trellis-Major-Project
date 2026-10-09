@@ -2,10 +2,9 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import DashboardLayout from "@/components/DashboardLayout";
+import { BACKEND_URL } from "@/config/api";
 
 export default function LostFoundPage() {
-  const BACKEND_URL = "http://localhost:5000";
-
   const [token, setToken] = useState<string | null>(null);
   const [userRole, setUserRole] = useState<string | null>(null);
   const [userEmail, setUserEmail] = useState<string | null>(null);

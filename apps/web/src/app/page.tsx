@@ -4,9 +4,9 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import DashboardLayout from "@/components/DashboardLayout";
+import { BACKEND_URL } from "@/config/api";
 
 export default function Home() {
-  const BACKEND_URL = "http://localhost:5000";
   const router = useRouter();
 
   // Auth State
@@ -114,7 +114,6 @@ export default function Home() {
       setUserRole(savedRole);
       setUserEmail(savedEmail);
       
-      const BACKEND_URL = "http://localhost:5000";
       fetch(`${BACKEND_URL}/api/auth/me`, {
         headers: { Authorization: `Bearer ${savedToken}` }
       })
