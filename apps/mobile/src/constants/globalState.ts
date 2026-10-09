@@ -1,6 +1,9 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Constants from 'expo-constants';
 
+// Production backend URL (Render) — used when running as a standalone APK
+const PRODUCTION_BACKEND_URL = 'https://trellis-major-project.onrender.com';
+
 function getAutoDetectedIp(): string {
   try {
     const hostUri =
@@ -143,7 +146,13 @@ class GlobalState {
   }
 
   get backendUrl() {
-    return `http://${this._ipAddress}:5000`;
+    // In local Expo Go dev mode: use auto-detected LAN IP
+    // In standalone APK build: use live Render production URL
+    const isLocalDev = this._ipAddress !== '127.0.0.1';
+    if (isLocalDev) {
+      return `http://${this._ipAddress}:5000`;
+    }
+    return PRODUCTION_BACKEND_URL;
   }
 
   subscribe(listener: () => void) {
